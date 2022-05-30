@@ -12,7 +12,7 @@ import MovieCard from "./MovieCard";
 
 const App = ( ) => {
 
-    const API_URL = 'http://www.omdbapi.com/?apikey=fc737dd4&'
+    const API_URL = 'https://www.omdbapi.com/?apikey=fc737dd4&'
 
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -42,8 +42,8 @@ const App = ( ) => {
                 movies?.length > 0
                 ?(
                     <div className="container">
-                        {movies.map((movie) => (
-                            <MovieCard movie={movie}/>
+                        {movies.map((movie, index) => (
+                            <MovieCard key={index} movie={movie}/>
                         ))}
                     </div>
                 ) :
